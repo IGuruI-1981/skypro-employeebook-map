@@ -5,11 +5,17 @@ import java.util.Objects;
 public class Employee {
     private String firstName;
     private String lastName;
+    private String passport;
 
-    public Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName, String passport) {
         this.lastName = lastName;
         this.firstName = firstName;
+        this.passport = passport;
 
+    }
+
+    public String getPassport() {
+        return passport;
     }
 
     public String getFirstName() {
@@ -30,7 +36,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName);
+        return Objects.hash(firstName, lastName, passport);
     }
 
     @Override
@@ -38,6 +44,7 @@ public class Employee {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", passport='" + passport + '\'' +
                 '}';
     }
 }
